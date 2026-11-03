@@ -3,7 +3,7 @@ import os
 from flask import Flask
 
 from app.config import config_by_name
-from app.ruta import api
+from app.routes.sort_routes import sort_bp
 
 
 def create_app(config_name=None):
@@ -11,6 +11,6 @@ def create_app(config_name=None):
 
     env_name = config_name or os.environ.get("FLASK_ENV", "development")
     app.config.from_object(config_by_name.get(env_name, config_by_name["development"]))
-    app.register_blueprint(api)
+    app.register_blueprint(sort_bp, url_prefix='/api')
 
     return app
