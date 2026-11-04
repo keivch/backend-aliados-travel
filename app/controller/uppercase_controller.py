@@ -42,4 +42,4 @@ class UppercaseController:
                 "status": "success"
             }), 200
         except Exception as e:
-            return jsonify({"error": str(e)}), 500
+            return jsonify({"error": str(e)}), 400
