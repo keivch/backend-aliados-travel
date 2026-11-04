@@ -15,21 +15,21 @@ class SortController:
         numbers = data.get("numbers")
 
         if not isinstance(numbers, list):
-            return jsonify({"error": "se debe enviar una lista de números"}), 400
+            return jsonify({"error": "se debe enviar una lista de numeros"}), 400
 
         if any(
             isinstance(n, bool) or not isinstance(n, (int, float))
             for n in numbers
         ):
-            return jsonify({"error": "se deben enviar solo números"}), 400
+            return jsonify({"error": "se deben enviar solo numeros"}), 400
 
         model = SortModel(numbers)
 
         sorted_numbers = SortService.merge_sort(numbers)
 
         return jsonify({
-            "original: ": model.numbers,
-            "sorted: ": sorted_numbers,
+            "original": model.numbers,
+            "sorted": sorted_numbers,
             "algoritmo": "merge sort",
             "status": "success"
         }), 200

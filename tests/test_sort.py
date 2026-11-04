@@ -21,7 +21,7 @@ def test_sort_unsorted_numbers(client):
     })
 
     assert response.status_code == 200
-    assert response.json['sorted: '] == [2, 4, 6, 7]
+    assert response.json['sorted'] == [2, 4, 6, 7]
 
 
 # 2. Lista ya ordenada
@@ -32,7 +32,7 @@ def test_sort_already_sorted(client):
     })
 
     assert response.status_code == 200
-    assert response.json['sorted: '] == [1, 2, 3, 4, 5]
+    assert response.json['sorted'] == [1, 2, 3, 4, 5]
 
 
 # 3. Lista en orden inverso
@@ -43,7 +43,7 @@ def test_sort_reverse_numbers(client):
     })
 
     assert response.status_code == 200
-    assert response.json['sorted: '] == [1, 2, 3, 4, 5]
+    assert response.json['sorted'] == [1, 2, 3, 4, 5]
 
 
 # 4. Números negativos
@@ -54,7 +54,7 @@ def test_sort_negative_numbers(client):
     })
 
     assert response.status_code == 200
-    assert response.json['sorted: '] == [-5, -1, 0, 3]
+    assert response.json['sorted'] == [-5, -1, 0, 3]
 
 
 # 5. Números repetidos
@@ -65,7 +65,7 @@ def test_sort_repeated_numbers(client):
     })
 
     assert response.status_code == 200
-    assert response.json['sorted: '] == [1, 2, 2, 4, 4]
+    assert response.json['sorted'] == [1, 2, 2, 4, 4]
 
 
 # 6. Un solo elemento
@@ -76,7 +76,7 @@ def test_sort_single_number(client):
     })
 
     assert response.status_code == 200
-    assert response.json['sorted: '] == [8]
+    assert response.json['sorted'] == [8]
 
 
 # 7. Lista vacía

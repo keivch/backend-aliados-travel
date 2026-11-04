@@ -11,7 +11,7 @@ class UppercaseController:
 
         # validar que sea un archivo
         if 'file' not in request.files:
-            return jsonify({"error": "no se envió un archivo"}), 400
+            return jsonify({"error": "no se envio un archivo"}), 400
 
         file = request.files['file']
 
