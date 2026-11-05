@@ -44,7 +44,7 @@ El backend también queda disponible en `http://localhost:5000`.
 
 ## Ejecutar los tests
 
-Activa el entorno virtual e instala las dependencias, si todavía no lo hiciste. Luego ejecuta:
+Activa el entorno virtual e instala las dependencias,  luego ejecuta:
 
 ```bash
 python -m pytest
